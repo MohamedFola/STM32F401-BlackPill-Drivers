@@ -15,6 +15,9 @@
 #define GPIOx_IDR(i)                       *((volatile u32*)((GPIOx_Base_Address + (0x400 * i)) + 0x10))
 #define GPIOx_ODR(i)                       *((volatile u32*)((GPIOx_Base_Address + (0x400 * i)) + 0x14))
 #define GPIOx_BSRR(i)                      *((volatile u32*)((GPIOx_Base_Address + (0x400 * i)) + 0x18))
+#define GPIOx_BSRR_Set(i)                  *((volatile u16*)((GPIOx_Base_Address + (0x400 * i)) + 0x18))
+#define GPIOx_BSRR_Reset(i)                *((volatile u16*)((GPIOx_Base_Address + (0x400 * i)) + 0x1A))
+
 
 
 /* base addresses of the GPIO registers */
@@ -77,6 +80,14 @@
 #define GPIOA_BSRR                        *((volatile u32*)(GPIOA_Base_Address + 0x18))
 #define GPIOB_BSRR                        *((volatile u32*)(GPIOB_Base_Address + 0x18))
 #define GPIOC_BSRR                        *((volatile u32*)(GPIOC_Base_Address + 0x18))
+
+#define GPIOA_BSRR_Set                    *((volatile u16*)(GPIOA_Base_Address + 0x18))
+#define GPIOB_BSRR_Set                    *((volatile u16*)(GPIOB_Base_Address + 0x18))
+#define GPIOC_BSRR_Set                    *((volatile u16*)(GPIOC_Base_Address + 0x18))
+
+#define GPIOA_BSRR_Reset                  *((volatile u16*)(GPIOA_Base_Address + 0x1A))
+#define GPIOB_BSRR_Reset                  *((volatile u16*)(GPIOB_Base_Address + 0x1A))
+#define GPIOC_BSRR_Reset                  *((volatile u16*)(GPIOC_Base_Address + 0x1A))
 
 /* pins */
 #define GPIOx_BSRR_BS0                     0
