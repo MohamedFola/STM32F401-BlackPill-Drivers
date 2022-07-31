@@ -18,7 +18,7 @@
 	E --> Char_E
 	F --> Char_F
 */
-#define SSD_ERROR           Char_C
+#define SSD_ERROR           Char_E
        
 u16 SSD_NUMBER_ARRAY[11]  = {SSD_NUMBER0,
 	                        SSD_NUMBER1,

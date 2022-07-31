@@ -11,7 +11,8 @@
 #ifndef _KEYPAD_INTERFACE_H_
 #define _KEYPAD_INTERFACE_H_
 
-#define KPD_NO_PRESSED_KEY      0xFF
+/* The default value if no key is pressed */
+#define KPD_NO_PRESSED_KEY    0xFF
 
 u8 KPD_GetPressedKey();
 

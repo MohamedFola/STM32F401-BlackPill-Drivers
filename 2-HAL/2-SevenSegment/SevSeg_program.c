@@ -20,8 +20,6 @@
 
 void SevSeg_DipalyNumber(SevSeg Copy_SevSeg, u8 Copy_u8Number)
 {
-	u16 Local_u16Data = 0x0000;
-	
 	/* 
 		This Equation is used to limit the indices used to the array if the user entered a wrong index. 
 		if the user entered a number between 0 - 10 the SSD will display the the corresponding value of this index.
@@ -31,7 +29,5 @@ void SevSeg_DipalyNumber(SevSeg Copy_SevSeg, u8 Copy_u8Number)
 	
 	GPIO_SetPinValue(Copy_SevSeg.Enable_port, Copy_SevSeg.Enable_Pin, READ_BIT(Copy_SevSeg.Mode, 0));
 	
-	Local_u16Data = BitManipulationSetBits(Local_u16Data, Copy_SevSeg.Starting_Pin, 8, (Copy_SevSeg.Mode) ^ (SSD_NUMBER_ARRAY[SSD_NUMBER_INDEX]));
-	
-	GPIO_SetPortValue(GPIO_PORTA, Local_u16Data);
+	GPIO_SetChannelValue(Copy_SevSeg.Port, Copy_SevSeg.Starting_Pin, 8, (Copy_SevSeg.Mode) ^ (SSD_NUMBER_ARRAY[SSD_NUMBER_INDEX]));
 }
